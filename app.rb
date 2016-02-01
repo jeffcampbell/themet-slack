@@ -43,12 +43,12 @@ end
   puts "[LOG] #{request.body}"
 
   # Check for a nil response in the array
-  @scrapiresults = JSON.parse(request.body)
+  @scrapiresults = JSON.parse(request.body)[0]
 
   # scrapi results
-  if @scrapiresults.nil?
-    response = { title: "No results" }
-  else
+#  if @scrapiresults.nil?
+#    response = { title: "No results" }
+#  else
 
   get_title = @scrapiresults["title"]
   get_who = @scrapiresults["whoList"]["who"]["name"]
@@ -58,5 +58,5 @@ end
   get_url = @scrapiresults["url"]
 
   response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "Artist: #{get_who}", fields: [ { title: "Period", value: "#{get_when}", short: true }, { title: "Material", value: "#{get_what}", short: true } ] }
-  end
+#  end
 end
