@@ -54,22 +54,6 @@ end
     get_title = @scrapiresults["title"]
   end
 
-  if @scrapiresults["whoList"]["who"].nil?
-    get_who = "Unknown"
-  elsif @scrapiresults["whoList"]["who"][0]["name"].nil?
-    get_who = @scrapiresults["whoList"]["who"]["name"]
-  else
-    get_who = @scrapiresults["whoList"]["who"][0]["name"]
-  end
-
-  if @scrapiresults["whenList"]["when"].nil?
-    get_when = "Unknown"
-  elsif @scrapiresults["whenList"]["when"][0]["name"].nil?
-    get_who = @scrapiresults["whenList"]["when"]["name"]
-  else
-    get_when = @scrapiresults["whenList"]["when"][0]["name"]
-  end
-
   if @scrapiresults["primaryImageUrl"].nil?
     get_imageurl = ""
   else
@@ -82,6 +66,6 @@ end
     get_url = @scrapiresults["primaryImageUrl"]
   end
 
-  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "", fields: [ { title: "Artist", value: "#{get_who}", short: true }, { title: "Period", value: "#{get_when}", short: true } ] }
+  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "" }
 
 end
