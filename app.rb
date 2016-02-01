@@ -64,6 +64,6 @@ def generate_attachment
     get_url = "http://metmuseum.org#{get_url}"
   end
 
-  response = { title: "#{get_title}", title_link: "#{get_url}", thumb_url: "#{get_imageurl}", text: "#{textresponse}" }
+  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "#{textresponse}" }
 
 end
