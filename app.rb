@@ -56,14 +56,18 @@ end
 
   if @scrapiresults["whoList"]["who"].nil?
     get_who = "Unknown"
-  else
+  elsif @scrapiresults["whoList"]["who"]["name"].nil?
     get_who = @scrapiresults["whoList"]["who"][0]["name"]
+  else
+    get_who = @scrapiresults["whoList"]["who"]["name"]
   end
 
   if @scrapiresults["whenList"]["when"].nil?
     get_when = "Unknown"
+  elsif @scrapiresults["whenList"]["when"]["name"].nil?
+    get_who = @scrapiresults["whenList"]["when"][0]["name"]
   else
-    get_when = @scrapiresults["whenList"]["when"][0]["name"]
+    get_when = @scrapiresults["whenList"]["when"]["name"]
   end
 
   if @scrapiresults["primaryImageUrl"].nil?
