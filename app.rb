@@ -66,12 +66,6 @@ end
     get_when = @scrapiresults["whenList"]["when"][0]
   end
 
-  if @scrapiresults["whatList"]["what"][0].nil?
-    get_what = "Unknown"
-  else
-    get_what = @scrapiresults["whatList"]["what"][0]
-  end
-
   if @scrapiresults["primaryImageUrl"].nil?
     get_imageurl = ""
   else
@@ -84,6 +78,6 @@ end
     get_url = @scrapiresults["primaryImageUrl"]
   end
 
-  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "Artist: #{get_who}", fields: [ { title: "Period", value: "#{get_when}", short: true }, { title: "Material", value: "#{get_what}", short: true } ] }
+  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "", fields: [ { title: "Artist", value: "#{get_who}", short: true }, { title: "Period", value: "#{get_when}", short: true } ] }
 
 end
