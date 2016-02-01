@@ -55,7 +55,7 @@ def generate_attachment
   if @scrapiresults["url"].nil?
     get_url = ""
   else
-    get_url = @scrapiresults["primaryImageUrl"]
+    get_url = @scrapiresults["url"]
   end
 
   checkurl = URI.parse(get_url)
