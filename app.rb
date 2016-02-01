@@ -45,18 +45,45 @@ end
   # Check for a nil response in the array
   @scrapiresults = JSON.parse(request.body)
   puts "[LOG] #{@scrapiresults}"
-  # scrapi results
-#  if @scrapiresults.nil?
-#    response = { title: "No results" }
-#  else
 
-  get_title = @scrapiresults["title"]
-  get_who = @scrapiresults["whoList"]["who"]["name"]
-  get_when = @scrapiresults["whenList"]["when"]["name"]
-  #get_what = @scrapiresults["whatList"]["what"]["name"]
-  get_imageurl = @scrapiresults["primaryImageUrl"]
-  get_url = @scrapiresults["url"]
+# so many nil checks this is garbage rewrite me
 
-  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "Artist: #{get_who}", fields: [ { title: "Period", value: "#{get_when}", short: true }, { title: "Material", value: "get_what", short: true } ] }
-#  end
+  if @scrapiresults["title"].nil?
+    get_title = "Unknown"
+  else
+    get_title = @scrapiresults["title"]
+  end
+
+  if @scrapiresults["whoList"]["who"]["name"].nil?
+    get_who = "Unknown"
+  else
+    get_who = @scrapiresults["whoList"]["who"]["name"]
+  end
+
+  if @scrapiresults["whenList"]["when"]["name"].nil?
+    get_when = "Unknown"
+  else
+    get_when = @scrapiresults["whenList"]["when"]["name"]
+  end
+
+  if @scrapiresults["whatList"]["what"]["name"].nil?
+    get_what = "Unknown"
+  else
+    get_what = @scrapiresults["whatList"]["what"]["name"]
+  end
+
+  if @scrapiresults["primaryImageUrl"].nil?
+    get_imageurl = ""
+  else
+    get_imageurl = @scrapiresults["primaryImageUrl"]
+  end
+
+  if @scrapiresults["url"].nil?
+    get_url = ""
+  else
+    get_url = @scrapiresults["primaryImageUrl"]
+  end
+
+  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "Artist: #{get_who}", fields: [ { title: "Period", value: "#{get_when}", short: true }, { title: "Material", value: "#{get_what}", short: true } ] }
+
 end
