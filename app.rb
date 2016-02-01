@@ -53,7 +53,7 @@ end
   get_title = @scrapiresults["title"]
   get_who = @scrapiresults["whoList"]["who"]["name"]
   get_when = @scrapiresults["whenList"]["when"]["name"]
-  get_what = @scrapiresults["whatList"]["what"][0]
+  get_what = @scrapiresults["whatList"]["what"]["name"]
   get_imageurl = @scrapiresults["primaryImageUrl"]
   get_url = @scrapiresults["url"]
   end
