@@ -44,7 +44,7 @@ end
 
   # Check for a nil response in the array
   @scrapiresults = JSON.parse(request.body)[0]
-
+  puts "[LOG] #{@scrapiresults}"
   # scrapi results
 #  if @scrapiresults.nil?
 #    response = { title: "No results" }
