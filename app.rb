@@ -54,13 +54,13 @@ end
     get_title = @scrapiresults["title"]
   end
 
-  if @scrapiresults["whoList"].nil?
+  if @scrapiresults["whoList"][0].nil?
     get_who = "Unknown"
   else
     get_who = @scrapiresults["whoList"]["who"][0]
   end
 
-  if @scrapiresults["whenList"].nil?
+  if @scrapiresults["whenList"][0].nil?
     get_when = "Unknown"
   else
     get_when = @scrapiresults["whenList"]["when"][0]
