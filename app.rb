@@ -57,6 +57,6 @@ end
   get_imageurl = @scrapiresults["primaryImageUrl"]
   get_url = @scrapiresults["url"]
 
-  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "Artist: #{get_who}", fields: [ { title: "Period", value: "#{get_when}", short: true }, { title: "Material", value: "#{get_what}", short: true } ] }
+  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "Artist: #{get_who}", fields: [ { title: "Period", value: "#{get_when}", short: true }, { title: "Material", value: "get_what", short: true } ] }
 #  end
 end
