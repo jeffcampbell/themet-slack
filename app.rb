@@ -18,7 +18,7 @@ post "/" do
   response = ""
 begin
   puts "[LOG] #{params}"
-  params[:text] = params[:text].sub(params[:trigger_word], "")
+  params[:text] = params[:text].sub(params[:trigger_word], "").strip
   unless params[:token] != ENV["OUTGOING_WEBHOOK_TOKEN"]
     response = { text: "From the collection:" }
     response[:attachments] = [ generate_attachment ]
@@ -34,10 +34,10 @@ end
 def generate_attachment
   @user_query = params[:text]
 if @user_query.length == 0
-  uri = "http://scrapi.org/random?fields=title,whoList/who/name,whenList/when/name,whatList/what/name,primaryImageUrl,url"
+  uri = "http://scrapi.org/random?fields=title,primaryImageUrl,url"
 else
 #  @user_query = @user_query.gsub(/ /, '%20')
-  uri = "http://scrapi.org/search/#{@user_query}?fields=title,whoList/who/name,whenList/when/name,whatList/what/name,primaryImageUrl,url"
+  uri = "http://scrapi.org/search/#{@user_query}?fields=title,primaryImageUrl,url"
 end
   request = HTTParty.get(uri)
   puts "[LOG] #{request.body}"
