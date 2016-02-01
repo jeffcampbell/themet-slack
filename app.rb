@@ -58,6 +58,16 @@ def generate_attachment
     get_url = @scrapiresults["primaryImageUrl"]
   end
 
+  checkurl = URI.parse(get_url)
+  unless checkurl.kind_of?(URI::HTTP) or checkurl.kind_of?(URI::HTTPS)
+    get_url = "http://metmuseum.org#{get_url}"
+  end
+
+  checkimageurl = URI.parse(get_imageurl)
+  unless uri.kind_of?(URI::HTTP) or uri.kind_of?(URI::HTTPS)
+    get_imageurl = ""
+  end
+
   response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "" }
 
 end
