@@ -43,7 +43,7 @@ end
   puts "[LOG] #{request.body}"
 
   # Check for a nil response in the array
-  @scrapiresults = JSON.parse(request.body)[0]
+  @scrapiresults = JSON.parse(request.body)
   puts "[LOG] #{@scrapiresults}"
   # scrapi results
 #  if @scrapiresults.nil?
