@@ -57,13 +57,13 @@ end
   if @scrapiresults["whoList"].nil?
     get_who = "Unknown"
   else
-    get_who = @scrapiresults["whoList"]["who"]["name"]
+    get_who = @scrapiresults["whoList"]["who"][0]
   end
 
   if @scrapiresults["whenList"].nil?
     get_when = "Unknown"
   else
-    get_when = @scrapiresults["whenList"]["when"]["name"]
+    get_when = @scrapiresults["whenList"]["when"][0]
   end
 
   if @scrapiresults["primaryImageUrl"].nil?
