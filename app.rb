@@ -36,7 +36,6 @@ def generate_attachment
   puts "[LOG] #{request.body}"
 
   @scrapiresults = JSON.parse(request.body)
-  puts "[LOG] #{@scrapiresults}"
 
 # so many nil checks this is garbage rewrite me
 
