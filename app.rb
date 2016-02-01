@@ -36,7 +36,7 @@ def generate_attachment
 if @user_query.length == 0
   uri = "http://scrapi.org/random?fields=title,whoList/who/name,whenList/when/name,whatList/what/name,primaryImageUrl,url"
 else
-  @user_query = @user_query.gsub(/ /, '%20')
+#  @user_query = @user_query.gsub(/ /, '%20')
   uri = "http://scrapi.org/search/#{@user_query}?fields=title,whoList/who/name,whenList/when/name,whatList/what/name,primaryImageUrl,url"
 end
   request = HTTParty.get(uri)
