@@ -54,16 +54,16 @@ end
     get_title = @scrapiresults["title"]
   end
 
-  if @scrapiresults["whoList"][0].nil?
+  if @scrapiresults["whoList"]["who"][0]["name"].nil?
     get_who = "Unknown"
   else
-    get_who = @scrapiresults["whoList"]["who"][0]
+    get_who = @scrapiresults["whoList"]["who"][0]["name"]
   end
 
-  if @scrapiresults["whenList"][0].nil?
+  if @scrapiresults["whenList"]["when"][0]["name"].nil?
     get_when = "Unknown"
   else
-    get_when = @scrapiresults["whenList"]["when"][0]
+    get_when = @scrapiresults["whenList"]["when"][0]["name"]
   end
 
   if @scrapiresults["primaryImageUrl"].nil?
