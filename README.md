@@ -1,7 +1,7 @@
 # theMet-slack
 Retrieves a random piece from the collection of The Metropolitan Museum of Art.
 
-![example image 1](http://i.imgur.com/mjaVCQF.png)
+![example image 1](http://i.imgur.com/QvUiQOW.png)
 Powered by [scrAPI](http://scrapi.org/) and [The Metropolitan Museum of Art](http://www.metmuseum.org/)
 
 ### What you will need
