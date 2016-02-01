@@ -2,7 +2,7 @@
 Retrieves a random piece from the collection of The Metropolitan Museum of Art.
 
 ![example image 1](http://i.imgur.com/mjaVCQF.png)
-Powered by [scrAPI](http://scrapi.org/)
+Powered by [scrAPI](http://scrapi.org/) and [The Metropolitan Museum of Art](http://www.metmuseum.org/)
 
 ### What you will need
 * A [Heroku](http://www.heroku.com) account
