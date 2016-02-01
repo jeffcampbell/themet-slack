@@ -48,8 +48,10 @@ def generate_attachment
 
   if @scrapiresults["primaryImageUrl"].nil?
     get_imageurl = ""
+    textresponse = "No image is available at this time."
   else
     get_imageurl = @scrapiresults["primaryImageUrl"]
+    textresponse = ""
   end
 
   if @scrapiresults["url"].nil?
@@ -68,6 +70,6 @@ def generate_attachment
     get_imageurl = ""
   end
 
-  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "" }
+  response = { title: "#{get_title}", title_link: "#{get_url}", image_url: "#{get_imageurl}", text: "#{textresponse}" }
 
 end
